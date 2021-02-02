@@ -607,11 +607,11 @@ public class View{
 		int index = 1;
 		Object comboData[] = {"Manager", "Cashier"};
 
-		var username = new JTextField();
-		var password = new JTextField();
-		var fullname = new JTextField();
+		JTextField username = new JTextField();
+		JTextField password = new JTextField();
+		JTextField fullname = new JTextField();
 		@SuppressWarnings({"rawtypes", "unchecked"})
-		var comboBox = new JComboBox(comboData);
+		JComboBox comboBox = new JComboBox(comboData);
 		comboBox.setSelectedIndex(index);
 		Object[] message = {
 			"Username: ", username,
@@ -661,9 +661,9 @@ public class View{
 	public Object[] getProdRegData() {
 		Object data[] = new Object[3];
 
-		var productCode = new JTextField();
-		var productName = new JTextField();
-		var price = new JTextField();
+		JTextField productCode = new JTextField();
+		JTextField productName = new JTextField();
+		JTextField price = new JTextField();
 		Object[] message = {
 			"Product Code: ", productCode,
 			"Product Name", productName,
