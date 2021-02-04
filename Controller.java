@@ -18,20 +18,19 @@ public class Controller{
         this.view = view;
         this.model = model;
 
-        startProgram();
-
         this.view.actionButtonListener(new ControllerButtonListener());
+
+        startProgram();
     }
 
     private void startProgram() {
         if(model.checkInternet()) {
-
             view.startProgram(30);
+
             if(model.checkConnectionToServer()) {
-
                 view.startProgram(30);
-                if(model.connectToDB()) {
 
+                if(model.connectToDB()) {
                     view.startProgram(40);
                 } else {
                     view.showError(
@@ -64,7 +63,6 @@ public class Controller{
 
     class ControllerButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Command");
             if(e.getSource().equals(view.btn_Login)) {
                 verifyUser();
             } else if(e.getSource().equals(view.btn_LogoutUser)) {
@@ -98,7 +96,6 @@ public class Controller{
             } else if(e.getSource().equals(view.btn_clearProds)) {
                 emptyProducts();
             } else if(e.getSource().equals(view.btn_abortStart)) {
-                System.out.println("Hello");
                 view.frm_splash.dispose();
             }
         }
